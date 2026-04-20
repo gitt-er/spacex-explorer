@@ -8,6 +8,24 @@ A frontend SpaceX Explorer built with **Next.js (App Router)**, **React**, and *
 
 ---
 
+## Getting Started
+
+### 1) Install dependencies
+```bash
+npm install
+```
+
+### 2) Run development server
+```bash
+npm run dev
+```
+
+### 3) Open app
+[http://localhost:3000](http://localhost:3000)
+
+---
+
+
 ## Features
 
 ### Launches List
@@ -148,23 +166,6 @@ lib/
   favorites.ts
   launchAnalytics.ts
 ```
-
----
-
-## Getting Started
-
-### 1) Install dependencies
-```bash
-npm install
-```
-
-### 2) Run development server
-```bash
-npm run dev
-```
-
-### 3) Open app
-[http://localhost:3000](http://localhost:3000)
 
 ---
 
