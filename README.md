@@ -3,9 +3,8 @@
 A frontend SpaceX Explorer built with **Next.js (App Router)**, **React**, and **TypeScript**, powered by the public **SpaceX API v4**.
 
 ## GitHub Repo
-
-Add your repository link here:  
-`https://github.com/<your-username>/<your-repo>`
+ 
+`https://github.com/gitt-er/spacex-explorer`
 
 ---
 
@@ -218,11 +217,3 @@ npm run dev
 - Add compare-launches side-by-side page with shareable URL params
 
 ---
-
-## Timebox Notes
-
-This implementation targets a **3-5 hour scope**:
-- Prioritized core list/detail/favorites flow and UX states
-- Added performance primitives (query caching + virtualization)
-- Included bonus analytics charts and basic offline support
-- Left advanced hardening/testing items documented as TODOs
