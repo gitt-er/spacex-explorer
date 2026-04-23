@@ -16,8 +16,7 @@ export default function SearchBar({
           placeholder="Search missions..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 
-          focus:outline-none focus:ring-2 focus:ring-white/20 transition"
+          className="ui-input w-full rounded-xl px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-blue-400/30"
         />
       </div>
     );

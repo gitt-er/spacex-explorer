@@ -65,11 +65,11 @@ export default function LaunchesPage() {
 
   if (isError) {
     return (
-      <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center gap-4">
-        <p className="text-red-400">Failed to load launches</p>
+      <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-background text-foreground">
+        <p className="text-red-500 dark:text-red-400">Failed to load launches</p>
         <button
           onClick={() => refetch()}
-          className="px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition"
+          className="ui-primary-btn rounded-lg px-4 py-2 transition"
         >
           Retry
         </button>
@@ -78,12 +78,12 @@ export default function LaunchesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white px-6 py-10">
+    <div className="min-h-screen bg-background px-6 py-10 text-foreground">
       <div className="max-w-4xl mx-auto mb-8">
         <h1 className="text-3xl font-bold tracking-tight">
           🚀 SpaceX Explorer
         </h1>
-        <p className="text-gray-400 mt-1">
+        <p className="ui-muted mt-1">
           Browse and track all SpaceX launches
         </p>
       </div>

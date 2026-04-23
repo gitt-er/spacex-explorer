@@ -16,7 +16,7 @@ export default function SortAndDateControls({
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value as SortAndDateControlsProps["sort"])}
-            className="bg-zinc-900 border border-zinc-800 px-3 py-2 rounded-lg"
+            className="ui-input rounded-lg px-3 py-2"
           >
             <option value="date_utc">Date</option>
             <option value="name">Name</option>
@@ -25,7 +25,7 @@ export default function SortAndDateControls({
           <select
             value={sortDir}
             onChange={(e) => setSortDir(e.target.value as SortAndDateControlsProps["sortDir"])}
-            className="bg-zinc-900 border border-zinc-800 px-3 py-2 rounded-lg"
+            className="ui-input rounded-lg px-3 py-2"
           >
             <option value="desc">Desc</option>
             <option value="asc">Asc</option>
@@ -37,14 +37,14 @@ export default function SortAndDateControls({
             type="date"
             value={dateFrom}
             onChange={(e) => setDateFrom(e.target.value)}
-            className="bg-zinc-900 border border-zinc-800 px-3 py-2 rounded-lg"
+            className="ui-input rounded-lg px-3 py-2"
           />
   
           <input
             type="date"
             value={dateTo}
             onChange={(e) => setDateTo(e.target.value)}
-            className="bg-zinc-900 border border-zinc-800 px-3 py-2 rounded-lg"
+            className="ui-input rounded-lg px-3 py-2"
           />
         </div>
       </div>

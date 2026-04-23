@@ -14,7 +14,6 @@ export default async function LaunchDetail({
   const { id } = await params;
 
   const launch = await fetchLaunchById(id);
-  console.log(launch)
 
   const [rocket, launchpad] = await Promise.all([
     fetchRocket(launch.rocket),
@@ -38,7 +37,7 @@ export default async function LaunchDetail({
   const images: string[] = launch.links?.flickr?.original || [];
 
   return (
-    <div className="min-h-screen bg-black text-white px-6 py-10">
+    <div className="min-h-screen bg-background px-6 py-10 text-foreground">
       <div className="max-w-5xl mx-auto space-y-10">
 
         {/* HEADER */}
@@ -48,7 +47,7 @@ export default async function LaunchDetail({
           </h1>
           <FavoriteButton id={id} />
 
-          <div className="flex items-center gap-4 text-sm text-gray-400">
+          <div className="ui-muted flex items-center gap-4 text-sm">
             <span>
               {new Date(launch.date_utc).toLocaleString()}
             </span>
@@ -60,9 +59,9 @@ export default async function LaunchDetail({
         </div>
 
         {/* DETAILS */}
-        <div className="p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
+        <div className="ui-card p-6">
           <h2 className="text-lg font-semibold mb-2">Mission Details</h2>
-          <p className="text-gray-300 leading-relaxed">
+          <p className="leading-relaxed">
             {launch.details || "No mission details available."}
           </p>
         </div>
@@ -73,7 +72,7 @@ export default async function LaunchDetail({
             <a
               href={launch.links.webcast}
               target="_blank"
-              className="px-4 py-2 rounded-xl bg-white text-black hover:bg-gray-200 transition"
+              className="ui-primary-btn rounded-xl px-4 py-2 transition"
             >
               Watch Webcast
             </a>
@@ -83,7 +82,7 @@ export default async function LaunchDetail({
             <a
               href={launch.links.article}
               target="_blank"
-              className="px-4 py-2 rounded-xl border border-zinc-700 hover:border-zinc-500 transition"
+              className="ui-secondary-btn rounded-xl px-4 py-2 transition"
             >
               Read Article
             </a>
@@ -98,7 +97,8 @@ export default async function LaunchDetail({
               {images.map((img, idx) => (
                 <div
                   key={idx}
-                  className="relative aspect-square overflow-hidden rounded-xl border border-zinc-800"
+                  className="relative aspect-square overflow-hidden rounded-xl border"
+                  style={{ borderColor: "var(--border)" }}
                 >
                   <img
                     src={img}
@@ -113,16 +113,16 @@ export default async function LaunchDetail({
 
         <div className="grid md:grid-cols-2 gap-4">
 
-          <div className="p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
-            <h3 className="text-sm text-gray-400 mb-1">Rocket</h3>
+          <div className="ui-card p-6">
+            <h3 className="ui-muted mb-1 text-sm">Rocket</h3>
             <h2 className="text-xl font-semibold">{rocket.name}</h2>
             <RocketDescription description={rocket.description} />
           </div>
 
-          <div className="p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
-            <h3 className="text-sm text-gray-400 mb-1">Launchpad</h3>
+          <div className="ui-card p-6">
+            <h3 className="ui-muted mb-1 text-sm">Launchpad</h3>
             <h2 className="text-xl font-semibold">{launchpad.name}</h2>
-            <p className="text-gray-400 mt-2 text-sm">
+            <p className="ui-muted mt-2 text-sm">
               {launchpad.locality}, {launchpad.region}
             </p>
           </div>

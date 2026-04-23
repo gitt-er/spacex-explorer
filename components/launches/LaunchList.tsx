@@ -18,14 +18,15 @@ export default function LaunchList({
           {Array.from({ length: 6 }).map((_, i) => (
             <div
               key={i}
-              className="h-24 rounded-2xl bg-zinc-900 animate-pulse border border-zinc-800"
+              className="h-24 animate-pulse rounded-2xl border"
+              style={{ borderColor: "var(--border)", backgroundColor: "var(--surface-hover)" }}
             />
           ))}
         </div>
       )}
 
       {!isLoading && launches.length === 0 && (
-        <div className="text-center text-gray-500 py-10">
+        <div className="ui-muted py-10 text-center">
           {emptyText}
         </div>
       )}
@@ -48,7 +49,7 @@ export default function LaunchList({
           <button
             onClick={() => fetchNextPage()}
             disabled={isFetchingNextPage}
-            className="px-6 py-3 bg-white text-black rounded-xl hover:bg-gray-200 transition"
+            className="ui-primary-btn rounded-xl px-6 py-3 transition"
           >
             {isFetchingNextPage ? "Loading..." : "Load more"}
           </button>

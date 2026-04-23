@@ -25,13 +25,13 @@ function LaunchRow({ index, style, data }: Props) {
   return (
     <div style={style} className="px-2">
       <Link href={`/launches/${doc.id}`}>
-        <div className="block p-5 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition">
+        <div className="ui-card block p-5 transition hover:brightness-[1.03]">
           
           <div className="flex justify-between items-start gap-4">
             
             <div>
               <h2 className="text-lg font-semibold">{doc.name}</h2>
-              <p className="text-sm text-gray-400">{date}</p>
+              <p className="ui-muted text-sm">{date}</p>
             </div>
 
             <div className="flex flex-col items-end gap-2">

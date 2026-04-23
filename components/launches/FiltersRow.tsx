@@ -13,9 +13,9 @@ export default function FiltersRow({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Mission State */}
         <div className="space-y-2">
-          <p className="text-xs text-zinc-400">Mission state</p>
+          <p className="ui-muted text-xs">Mission state</p>
   
-          <div className="flex rounded-lg overflow-hidden border border-zinc-800 w-fit">
+          <div className="flex w-fit overflow-hidden rounded-lg border" style={{ borderColor: "var(--border)" }}>
             {[
               { label: "All", value: null },
               { label: "Upcoming", value: true },
@@ -29,8 +29,8 @@ export default function FiltersRow({
                 }}
                 className={`px-3 py-1 text-sm transition ${
                   upcoming === opt.value
-                    ? "bg-white text-black"
-                    : "hover:bg-zinc-800"
+                    ? "ui-primary-btn"
+                    : "bg-transparent text-foreground hover:bg-[var(--surface-hover)]"
                 }`}
               >
                 {opt.label}
@@ -42,9 +42,9 @@ export default function FiltersRow({
         {/* Outcome */}
         {upcoming !== true && (
           <div className="space-y-2">
-            <p className="text-xs text-zinc-400">Outcome</p>
+            <p className="ui-muted text-xs">Outcome</p>
   
-            <div className="flex rounded-lg overflow-hidden border border-zinc-800 w-fit">
+            <div className="flex w-fit overflow-hidden rounded-lg border" style={{ borderColor: "var(--border)" }}>
               {[
                 { label: "All", value: null },
                 { label: "Success", value: true },
@@ -55,8 +55,8 @@ export default function FiltersRow({
                   onClick={() => setSuccess(opt.value)}
                   className={`px-3 py-1 text-sm transition ${
                     success === opt.value
-                      ? "bg-white text-black"
-                      : "hover:bg-zinc-800"
+                      ? "ui-primary-btn"
+                      : "bg-transparent text-foreground hover:bg-[var(--surface-hover)]"
                   }`}
                 >
                   {opt.label}

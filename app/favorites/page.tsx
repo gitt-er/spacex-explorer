@@ -25,23 +25,23 @@ export default function FavoritesPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white p-10">
+    <div className="min-h-screen bg-background p-10 text-foreground">
       <h1 className="text-3xl font-bold mb-6">Favorites</h1>
 
       <div className="space-y-4">
         {launches.length == 0 && (
-          <div className="p-10 text-center text-gray-400">
+          <div className="ui-muted p-10 text-center">
             No favorites yet ⭐
           </div>)}
         {launches.length > 0 && launches.map((launch) => (
           <div key={launch.id} className="px-2">
             <Link href={`/launches/${launch.id}`}>
-              <div className="block p-5 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition">
+              <div className="ui-card block p-5 transition hover:brightness-[1.03]">
                 
                 <div className="flex justify-between items-start gap-4">
                   <div>
                     <h2 className="text-lg font-semibold">{launch.name}</h2>
-                    <p className="text-sm text-gray-400">
+                    <p className="ui-muted text-sm">
                       {new Date(launch.date_utc).toLocaleDateString()}
                     </p>
                   </div>
