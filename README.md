@@ -61,6 +61,16 @@ npm run dev
 - Chart: success rate
 - Basic service worker registration for API caching/offline-read behavior
 
+### Dark/Light Theme Refresh (What I changed)
+I spent time polishing the theming so it feels intentional in both modes, not just "light classes + dark classes" stitched together.
+
+- Added a real `next-themes` setup with a header toggle (`ThemeToggle`) so users can switch themes directly.
+- Switched from scattered hardcoded colors to reusable design tokens in `globals.css` (background, surface, border, muted text, primary action colors).
+- Introduced shared UI utility classes (`ui-card`, `ui-input`, `ui-primary-btn`, `ui-secondary-btn`, `ui-muted`) to keep visual language consistent.
+- Updated major screens (launch list, launch detail, favorites, charts, controls, loading/error states) to use the same token-based palette.
+
+In plain terms: the app now looks more coherent, easier on the eyes, and much more consistent route-to-route in both dark and light mode.
+
 ---
 
 ## Tech Stack
