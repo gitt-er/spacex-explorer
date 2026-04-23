@@ -18,7 +18,6 @@ export async function fetchLaunches(params: LaunchQueryRequest, signal?: AbortSi
 
 export async function fetchLaunchById(id: string) {
   const res = await fetchWithRetry(`${BASE_URL}/launches/${id}`);
-  console.log(res)
   if (!res.ok) throw new Error("Failed to fetch launch");
   return res.json();
 }

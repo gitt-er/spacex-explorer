@@ -13,8 +13,8 @@ import {
 
   export default function SuccessRateChart({ data }: {data: SuccessRateData[]}) {
     return (
-      <div className="w-full h-80 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
-        <h2 className="text-sm text-zinc-400 mb-3">Success rate</h2>
+      <div className="ui-card h-80 w-full p-4">
+        <h2 className="ui-muted mb-3 text-sm">Success rate</h2>
   
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>

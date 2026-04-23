@@ -1,6 +1,7 @@
 import Providers from "./providers";
 import "./globals.css";
 import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function RootLayout({
   children,
@@ -8,26 +9,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-black text-white">
-        <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-900 text-white">
-          <div className="max-w-4xl mx-auto px-6 py-4 flex gap-6">
-            <Link
-              href="/launches"
-              className="hover:text-white text-zinc-400 transition"
-            >
-              Launches
-            </Link>
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen bg-background text-foreground">
+        <Providers>
+          <header className="sticky top-0 z-50 border-b backdrop-blur" style={{ borderColor: "var(--border)", backgroundColor: "color-mix(in srgb, var(--surface) 92%, transparent)" }}>
+            <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+              <div className="flex gap-6">
+              <Link
+                href="/launches"
+                className="ui-muted transition hover:text-foreground"
+              >
+                Launches
+              </Link>
 
-            <Link
-              href="/favorites"
-              className="hover:text-white text-zinc-400 transition"
-            >
-              Favorites
-            </Link>
-          </div>
-        </header>
-        <Providers>{children}</Providers>
+              <Link
+                href="/favorites"
+                className="ui-muted transition hover:text-foreground"
+              >
+                Favorites
+              </Link>
+              </div>
+              <ThemeToggle />
+            </div>
+          </header>
+          {children}
+        </Providers>
       </body>
     </html>
   );

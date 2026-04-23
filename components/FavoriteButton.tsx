@@ -1,14 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { isFavorite, toggleFavorite } from "@/lib/favorites";
 
 export default function FavoriteButton({ id, onRemove }: { id: string, onRemove?: (id: string) => void }) {
-  const [fav, setFav] = useState(false);
-
-  useEffect(() => {
-    setFav(isFavorite(id));
-  }, [id]);
+  const [fav, setFav] = useState(() => isFavorite(id));
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -23,8 +19,8 @@ export default function FavoriteButton({ id, onRemove }: { id: string, onRemove?
       onClick={handleClick}
       className={`px-3 py-1 rounded-full text-xs border transition ${
         fav
-          ? "bg-yellow-500 text-black border-yellow-400"
-          : "border-zinc-700 text-white hover:border-zinc-500"
+          ? "border-yellow-500/50 bg-yellow-400/20 text-yellow-700 dark:text-yellow-300"
+          : "ui-secondary-btn"
       }`}
     >
       {fav ? "★ Saved" : "☆ Save"}
