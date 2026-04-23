@@ -61,7 +61,7 @@ npm run dev
 - Chart: success rate
 - Basic service worker registration for API caching/offline-read behavior
 
-### Dark/Light Theme Refresh (What I changed)
+### Dark/Light Theme Refresh (What I changed 23/04/2026)
 I spent time polishing the theming so it feels intentional in both modes, not just "light classes + dark classes" stitched together.
 
 - Added a real `next-themes` setup with a header toggle (`ThemeToggle`) so users can switch themes directly.
